@@ -1,4 +1,4 @@
-export const home = 'home\n'
+export const home = 'home'
 
 export function walkTo(destination) {
   travelTo('WALK', destination)
@@ -25,6 +25,6 @@ export function buy(shoppingList) {
 }
 
 function formatLabel(label) {
-  return `${label.toUpperCase()}`.padEnd(5)
+  return `${label.toUpperCase()} `
 }
 
