@@ -29,10 +29,12 @@ function formatLabel(label) {
 }
 
 export function daily(time, callback) {
+  // time is not used, just call it rigt away
   callback()
 }
 
 export function on(event, callback) {
+  // event is not used, just call it right away
   callback()
 }
 
