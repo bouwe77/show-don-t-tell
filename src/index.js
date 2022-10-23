@@ -1,11 +1,15 @@
 import { home, walkTo, driveTo, cycleTo, buy } from './stuff.js'
 
 export function goShopping(shop, shoppingList) {
-  walkTo(shop)
 
+  let travelTo = walkTo
+if (shop !=='super market')  travelTo =driveTo
+
+  travelTo(shop)
+  
   buy(shoppingList)
 
-  walkTo(home)
+  travelTo(home)
 }
 
 export default function start() {

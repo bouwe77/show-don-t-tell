@@ -9,7 +9,7 @@ export function cycleTo(destination) {
 }
 
 export function driveTo(destination) {
-  travelTo('DRIVE ', destination)
+  travelTo('DRIVE', destination)
 }
 
 function travelTo(how, destination) {

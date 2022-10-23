@@ -13,7 +13,7 @@ beforeEach(() => {
   jest.clearAllMocks()
 })
 
-test('1 article at the super market', () => {
+test('1 article at the super market: Walk', () => {
   goShopping('super market', 'bread')
 
   assert('WALK super market')
@@ -21,11 +21,21 @@ test('1 article at the super market', () => {
   assert('WALK home')
 });
 
+test('One article: Buy 1 article comma separated', () => {
+  goShopping('whatever', ['bread','butter'])
 
-test('multiple articles at the super market', () => {
-  goShopping('super market', ['bread','eggs','sugar'])
+  assert('BUY bread, butter')
+});
 
-  assert('WALK super market')
-  assert('BUY bread, eggs, sugar')
-  assert('WALK home')
+test('Multiple articles: Buy articles comma separated', () => {
+  goShopping('whatever', ['bread','butter'])
+
+  assert('BUY bread, butter')
+});
+
+test('Any shop except the super market: Drive by car', () => {
+  goShopping('whatever', 'whatever')
+
+  assert('DRIVE whatever')
+  assert('DRIVE home')
 });

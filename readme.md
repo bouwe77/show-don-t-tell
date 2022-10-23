@@ -44,11 +44,25 @@ buy(shoppingList)
 walkTo(home)
 ```
 
-1. If the `shoppingList` is long, go by car instead of walking.
+1. Tests:
+   a. 1 article at the super market: Walk
+   b. One article at any shop: Buy 1 article
+   c. Multiple articles at any shop: Show comma separated
+   
+1. The super market is 50m away, so let's walk there always. Any other shop: Take the car.
 
-1. The super market is 50m away, so let's walk there always.
+1. Tests:
+   a. Any shop except the super market: Drive by car
 
 1. Let's do some more physical exercise, let's also add cycling. So let's add the distance in meters and decide on that.
+
+1. Tests:
+   a. Delete the "walk" and "drive by car" tests, only keep the 2 "buy" tests.
+   b. Add tests for the distance/travel combinations.
+
+1. If the `shoppingList` is long, regardless the distance, go by car.
+
+1. However, if it's really close than keep on walking.
 
 1. The weather also a factor to decide what to do: If the weather is bad, go by car. Weather type = `{ temperature: number, type: 'sunny' | 'cloudy' | 'rainy' | 'awful' }`
 
