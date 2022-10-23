@@ -1,6 +1,6 @@
 import { home, walkTo, driveTo, cycleTo, buy } from './stuff.js'
 
-function goShopping(shop, shoppingList) {
+export function goShopping(shop, shoppingList) {
   walkTo(shop)
 
   buy(shoppingList)
