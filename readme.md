@@ -48,15 +48,23 @@ walkTo(home)
 
 1. The super market is 50m away, so let's walk there always.
 
-1. Let's do some more physical exercise, let's also add cycling. So let's add the distance and decide on that.
+1. Let's do some more physical exercise, let's also add cycling. So let's add the distance in meters and decide on that.
 
-1. The weather also a factor to decide what to do: If the weather is bad, go by car.
+1. The weather also a factor to decide what to do: If the weather is bad, go by car. Weather type = `{ temperature: number, type: 'sunny' | 'cloudy' | 'rainy' | 'awful' }`
 
 1. What if we have a massive shopping list, let's go multiple times: _Recursion..._
 
 1. But what if we go that super fancy clothing shop 100km away, and have a massive list? Let's not drive there more than once...
 
 1. Let's also support going to multiple shops in one go, so the `shop` + `shoppingList` combination should become an object and then we could pass in an array of objects.
+
+## Findings / improvements
+
+1. I have to keep adjusting `goShopping` whenever something changes. This makes use cases that have nothing to do with the change vulnerable for bugs.
+
+1. I need to test unrealistic situations for `goShopping` (example?)
+
+1. Can I not just test my actual use cases, treating `goShopping` as an implementation detail? (misschien dan toch die "processen" implementeren?)
 
 1. The problem we are having now is that the calling code has an easy job, it just says _what_ it wants, and `goShopping` has a really tough job of figuring out _how_ the hell to do that...
 
@@ -82,18 +90,8 @@ e. ...
 
 Random ideas
 
-- In de functie eerst een `if ('super market') walkTo` en de rest `driveTo` doen?
-- Recursief maken om meerdere keren naar de winkel te gaan?
-- Weather `{ temperature: 21, type: 'rainy' }`
-- Weather `type` is something like `'sunny'`, '`cloudy'`, `'rainy'`, `'awful'`
-- Elke keer als er een winkel bijkomt moet ik de implementatie aanpassen...
 - Samenvatting Kent / Sandi?
-- Omdat ik steeds meer argumenten/logica toevoeg, moet ik steeds de tests aanpassen, uitbreiden, en eigenlijk zelfs misschien wel onnodige/onrealisische situaties.
-- Ik test meer dan ik daadwerkelijk nodig ben. Ik moet gewoon de daadwerkelijk use case(s) testen en de `goShopping` als implementatiedetail beschouwen.
-- If I only test my use cases, and things change, I only need to change that use case, and not the `goShopping` implementation detail.
-- Verschillende processen, zodat ik die (later) kan testen?
-- `goShopping` bepaalt het hoe HOE in alle situaties, waarmee het een onduidelijke black box wordt.
 - `goShopping` zou terug kunnen geven wat NIET gehaald is in de winkel, zodat de aanroepende code kan bepalen wat ermee moet gebeuren.
-- During the video, keep a list of bullet points of the things I've learned/improved in the implementation, do's and don'ts.
+- During the video, keep a list of bullet points of the things I've learned/improved in the implementation, do's and don'ts, so I can review them at the end.
 - Als ik iets mee moet geven waaruit iemand anders moet opmaken hoe dat dan gedaan moet worden, kan ik dan niet beter meteen meegeven hoe hij het moet doen?
 - 
