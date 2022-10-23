@@ -1,4 +1,4 @@
-import { home, walkTo, driveTo, cycleTo, buy } from './stuff.js'
+import { home, walkTo, driveTo, cycleTo, buy,on,daily } from './stuff.js'
 
 export function goShopping(shop, shoppingList) {
 
@@ -14,6 +14,19 @@ if (shop !=='super market')  travelTo =driveTo
 
 export default function start() {
 
+function buyDinnerAtSuperMarket() {
+  //...
+}
+
+  daily('17:00', buyDinnerAtSuperMarket)
+
+  function buyFinishedStockAtSuperMarket() {
+    //...
+  }
+
+  on('out of stock', buyFinishedStockAtSuperMarket)
+
+  
   // Every end of the day we go to the super market to buy stuff for dinner.
   // When we are out of stock for other things, we buy that too of course.
   goShopping('super market', ['macaroni', 'vegetables', 'beer', 'toilet paper'])

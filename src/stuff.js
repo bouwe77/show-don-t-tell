@@ -28,3 +28,11 @@ function formatLabel(label) {
   return `${label.toUpperCase()} `
 }
 
+export function daily(time, callback) {
+  callback()
+}
+
+export function on(event, callback) {
+  callback()
+}
+
