@@ -2,12 +2,16 @@ import { goShopping } from '../src/index.js'
 import { jest } from '@jest/globals'
 
 // Do not log to the console, instead mock it, so we can inspect it.
-const consoleLog = jest.spyOn(console, 'log').mockImplementation((logMessage) => {
-  // console.info(logMessage)
+const consoleInfo = jest.spyOn(console, 'info').mockImplementation((logMessage) => {
+  //console.log(logMessage)
 })
 
 // Assert (inspect) the given logMessage was sent to the console.
-const assert = (logMessage) => expect(consoleLog).toBeCalledWith(logMessage)
+// Optionally send nthCall to check whether it was the 1st, 2nd, etc. call.
+const assert = (logMessage, nthCall) => {
+  if (nthCall) return expect(consoleInfo).nthCalledWith(nthCall, logMessage)
+  return expect(consoleInfo).toBeCalledWith(logMessage)
+}
 
 beforeEach(() => {
   jest.clearAllMocks()

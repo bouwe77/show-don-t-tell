@@ -13,7 +13,7 @@ export function driveTo(destination) {
 }
 
 function travelTo(how, destination) {
-  console.log(`${formatLabel(how)}${destination}`)
+  console.info(`${formatLabel(how)}${destination}`)
 }
 
 export function buy(shoppingList) {
@@ -21,7 +21,7 @@ export function buy(shoppingList) {
     ? shoppingList.join(', ')
     : shoppingList
 
-  console.log(formatLabel('BUY') + stuff)
+  console.info(formatLabel('BUY') + stuff)
 }
 
 function formatLabel(label) {
@@ -29,7 +29,7 @@ function formatLabel(label) {
 }
 
 export function daily(time, callback) {
-  // time is not used, just call it rigt away
+  // time is not used, just call it right away
   callback()
 }
 
